@@ -46,6 +46,11 @@ public class ProductController {
 
         return produitsFiltres;
     }
+    
+    @RequestMapping(value="/Trie", method=RequestMethod.GET)
+    public List<Product>trierProduitsParOrdreAlphabetique() {
+        return productDao.findAllByOrderByNomAsc();
+    }
 
 
     //Récupérer un produit par son Id
